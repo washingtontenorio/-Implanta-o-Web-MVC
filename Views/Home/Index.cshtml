@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+
+    <h1> >>> Sistema de Controle Externo - LH Pet <<< </h1>
+
+        <table class="table table-hover table-sm table-bordered table-sm caption-top">
+            <caption>Lista de Clientes</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cpf</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Paciente(Pet)</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in @ViewBag.listaclientes)
+        {
+                    
+                    <tr>
+                        <th scope="row">@Item.Id</th>
+                        <td>@Item.Nome</td>
+                        <td>@Item.Cpf</td>
+                        <td>@Item.E-mail</td>
+                        <td>@Item.Paciente</td>
+                    </tr>
+                
+        }
+            </tbody>
+        </table>
+
+
+        <table class="table table-hover table-sm table-bordered table-sm caption-top">
+            <caption>Lista de Fornecedores</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col">E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in @ViewBag.listafornecedor)
+                {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.CNPJ</td>
+                    <td>@item.E-mail</td>
+                </tr>
+                }
+            </tbody>
+        </table>        
+
+
+    
